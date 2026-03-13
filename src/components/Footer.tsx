@@ -1,0 +1,46 @@
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { label: "About", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Reels", href: "#reels" },
+  { label: "Contact", href: "#contact" },
+  { label: "Admin", href: "/admin" },
+];
+
+export default function Footer() {
+  return (
+    <footer className="bg-[#0a0a0a] border-t border-white/5 py-12">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo */}
+          <a
+            href="#"
+            className="text-white font-semibold text-lg tracking-tight"
+            style={{ fontFamily: "\"Playfair Display\", Georgia, serif" }}
+          >
+            Julia <span className="text-[#ff6b35]">Martinez</span>
+          </a>
+
+          {/* Links */}
+          <nav className="flex items-center flex-wrap justify-center gap-6">
+            {footerLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-white/30 hover:text-white/70 transition-colors duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Copyright */}
+          <p className="text-sm text-white/20">
+            © {currentYear} Julia Martinez
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
