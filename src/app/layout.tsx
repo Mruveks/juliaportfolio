@@ -5,7 +5,7 @@ import "./globals.css";
 const siteUrl = "https://juliamartinez.co";
 const siteName = "Julia Martinez — Social Media Manager";
 const siteDescription =
-  "Social Media Manager helping brands grow online through strategic content, Instagram growth, TikTok content, and data-driven analytics.";
+  "Social Media Manager pomagająca markom rosnąć w mediach społecznościowych. Strategia treści, wzrost na Instagramie, TikTok i analityka oparta na danych.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -16,16 +16,18 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: [
     "social media manager",
-    "content strategy",
-    "Instagram growth",
-    "TikTok content",
-    "social media marketing",
+    "strategia treści",
+    "wzrost na instagramie",
+    "treści tiktok",
+    "marketing w mediach społecznościowych",
+    "social media polska",
+    "menadżer social media",
   ],
   authors: [{ name: "Julia Martinez" }],
   creator: "Julia Martinez",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "pl_PL",
     url: siteUrl,
     siteName,
     title: siteName,
@@ -68,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <head>
         {/* Google Fonts — Inter + Playfair Display */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "About", href: "#about" },
+  { label: "O mnie", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Reels", href: "#reels" },
-  { label: "Contact", href: "#contact" },
+  { label: "Kontakt", href: "#contact" },
 ];
 
 export default function Navigation() {
@@ -23,7 +23,7 @@ export default function Navigation() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#fafaf8]/95 backdrop-blur-sm shadow-sm border-b border-[#e5e5e3]"
+          ? "bg-[#FDFCFA]/95 backdrop-blur-sm shadow-sm border-b border-[#EAE5DF]"
           : "bg-transparent"
       }`}
     >
@@ -31,10 +31,10 @@ export default function Navigation() {
         {/* Logo */}
         <a
           href="#"
-          className="text-[#0a0a0a] font-semibold text-lg tracking-tight hover:text-[#ff6b35] transition-colors duration-200"
-          style={{ fontFamily: "\"Playfair Display\", Georgia, serif" }}
+          className="text-[#1A1714] font-semibold text-lg tracking-tight hover:text-[#B5926A] transition-colors duration-200"
+          style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
         >
-          Julia <span className="text-[#ff6b35]">Martinez</span>
+          Julia <span className="text-[#B5926A]">Martinez</span>
         </a>
 
         {/* Desktop nav */}
@@ -43,17 +43,17 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-[#0a0a0a]/70 hover:text-[#0a0a0a] transition-colors duration-200 relative group"
+              className="text-sm text-[#1A1714]/60 hover:text-[#1A1714] transition-colors duration-200 relative group"
             >
               {link.label}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#ff6b35] transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-[#B5926A] transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
           <a
             href="#contact"
-            className="text-sm bg-[#ff6b35] text-white px-5 py-2.5 rounded-full hover:bg-[#e55a24] transition-colors duration-200 font-medium"
+            className="text-sm bg-[#B5926A] text-white px-5 py-2.5 rounded-full hover:bg-[#9A7A55] transition-colors duration-200 font-medium"
           >
-            Work with me
+            Współpracuj ze mną
           </a>
         </nav>
 
@@ -61,17 +61,17 @@ export default function Navigation() {
         <button
           className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Przełącz menu"
           aria-expanded={menuOpen}
         >
           <span
-            className={`block w-5 h-0.5 bg-[#0a0a0a] transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+            className={`block w-5 h-0.5 bg-[#1A1714] transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
           />
           <span
-            className={`block w-5 h-0.5 bg-[#0a0a0a] transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`}
+            className={`block w-5 h-0.5 bg-[#1A1714] transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`}
           />
           <span
-            className={`block w-5 h-0.5 bg-[#0a0a0a] transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            className={`block w-5 h-0.5 bg-[#1A1714] transition-transform duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
           />
         </button>
       </div>
@@ -80,12 +80,12 @@ export default function Navigation() {
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-80" : "max-h-0"}`}
       >
-        <nav className="bg-[#fafaf8] border-t border-[#e5e5e3] px-6 py-4 flex flex-col gap-1">
+        <nav className="bg-[#FDFCFA] border-t border-[#EAE5DF] px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[#0a0a0a]/70 hover:text-[#ff6b35] py-2.5 text-sm transition-colors duration-200"
+              className="text-[#1A1714]/60 hover:text-[#B5926A] py-2.5 text-sm transition-colors duration-200"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -93,10 +93,10 @@ export default function Navigation() {
           ))}
           <a
             href="#contact"
-            className="mt-3 text-center text-sm bg-[#ff6b35] text-white px-5 py-2.5 rounded-full hover:bg-[#e55a24] transition-colors duration-200 font-medium"
+            className="mt-3 text-center text-sm bg-[#B5926A] text-white px-5 py-2.5 rounded-full hover:bg-[#9A7A55] transition-colors duration-200 font-medium"
             onClick={() => setMenuOpen(false)}
           >
-            Work with me
+            Współpracuj ze mną
           </a>
         </nav>
       </div>

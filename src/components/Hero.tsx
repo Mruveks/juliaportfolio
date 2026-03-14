@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 
 const socialLinks = [
   {
@@ -41,110 +41,152 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#fafaf8]">
-      {/* Background decoration */}
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#FDFCFA]">
+      {/* Subtle warm gradient background */}
       <div
-        className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.04] pointer-events-none"
+        className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-[0.06] pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, #ff6b35 0%, transparent 70%)",
-          transform: "translate(30%, -30%)",
+          background: "radial-gradient(circle, #B5926A 0%, transparent 65%)",
+          transform: "translate(25%, -20%)",
         }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-[0.04] pointer-events-none"
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.04] pointer-events-none"
         style={{
-          background:
-            "radial-gradient(circle, #ff6b35 0%, transparent 70%)",
+          background: "radial-gradient(circle, #B5926A 0%, transparent 70%)",
           transform: "translate(-30%, 30%)",
         }}
         aria-hidden="true"
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10 pt-24 pb-16 relative z-10">
-        <div className="max-w-4xl">
-          {/* Eyebrow */}
-          <div className="flex items-center gap-3 mb-8">
-            <span className="block w-10 h-px bg-[#ff6b35]" aria-hidden="true" />
-            <span className="text-sm font-medium text-[#ff6b35] uppercase tracking-widest">
-              Social Media Manager
-            </span>
-          </div>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 pt-24 pb-16 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-10rem)]">
 
-          {/* Headline */}
-          <h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight text-[#0a0a0a] mb-8"
-            style={{ fontFamily: "\"Playfair Display\", Georgia, serif" }}
-          >
-            Helping brands
-            <br />
-            <span className="text-[#ff6b35]">grow online</span>
-            <br />
-            through social.
-          </h1>
+          {/* LEFT — Text content */}
+          <div className="flex flex-col justify-center order-2 lg:order-1">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3 mb-6">
+              <span className="block w-8 h-px bg-[#B5926A]" aria-hidden="true" />
+              <span className="text-xs font-semibold text-[#B5926A] uppercase tracking-[0.18em]">
+                Social Media Manager
+              </span>
+            </div>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-[#0a0a0a]/60 max-w-2xl mb-12 leading-relaxed">
-            I craft scroll-stopping content, build engaged communities, and turn
-            social media into a powerful growth engine for brands that want to
-            stand out.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center bg-[#ff6b35] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#e55a24] transition-all duration-200 hover:shadow-lg hover:shadow-[#ff6b35]/20 hover:-translate-y-0.5"
+            {/* Name — the most prominent element */}
+            <h1
+              className="text-6xl sm:text-7xl md:text-8xl font-bold leading-[1.0] tracking-tight text-[#1A1714] mb-4"
+              style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
-              Work with me
-            </a>
-            <a
-              href="#portfolio"
-              className="inline-flex items-center justify-center border border-[#0a0a0a]/20 text-[#0a0a0a] px-8 py-4 rounded-full text-base font-medium hover:border-[#0a0a0a] transition-all duration-200 hover:-translate-y-0.5"
-            >
-              View my work
-              <svg
-                className="ml-2 w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-          </div>
+              Julia
+              <br />
+              <span className="text-[#B5926A]">Martinez</span>
+            </h1>
 
-          {/* Social icons */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-[#0a0a0a]/40 mr-2">Find me on</span>
-            {socialLinks.map((social) => (
+            {/* Tagline */}
+            <p className="text-lg md:text-xl text-[#1A1714]/55 mb-10 leading-relaxed max-w-md">
+              Pomagam markom rosnąć w mediach społecznościowych poprzez
+              przemyślaną strategię, angażujące treści i realne wyniki.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-[#e5e5e3] text-[#0a0a0a]/50 hover:text-[#ff6b35] hover:border-[#ff6b35] transition-all duration-200 hover:-translate-y-0.5"
+                href="#contact"
+                className="inline-flex items-center justify-center bg-[#B5926A] text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-[#9A7A55] transition-all duration-200 hover:shadow-lg hover:shadow-[#B5926A]/25 hover:-translate-y-0.5"
               >
-                {social.icon}
+                Współpracuj ze mną
               </a>
-            ))}
+              <a
+                href="#portfolio"
+                className="inline-flex items-center justify-center border border-[#1A1714]/20 text-[#1A1714] px-8 py-4 rounded-full text-sm font-medium hover:border-[#B5926A] hover:text-[#B5926A] transition-all duration-200 hover:-translate-y-0.5"
+              >
+                Zobacz moje prace
+                <svg
+                  className="ml-2 w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.8}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-2">
+              <span className="text-xs text-[#1A1714]/35 mr-2 tracking-wide">Znajdź mnie</span>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-[#EAE5DF] text-[#1A1714]/40 hover:text-[#B5926A] hover:border-[#B5926A]/40 transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
+
+          {/* RIGHT — Portrait photo */}
+          <div className="relative flex items-center justify-center order-1 lg:order-2">
+            {/* Decorative ring */}
+            <div
+              className="absolute w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full border border-[#EAE5DF]"
+              aria-hidden="true"
+            />
+            <div
+              className="absolute w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full border border-[#B5926A]/15"
+              aria-hidden="true"
+            />
+
+            {/* Photo container */}
+            <div className="relative w-[300px] h-[380px] md:w-[380px] md:h-[470px] rounded-[2.5rem] overflow-hidden bg-[#F0EBE3] shadow-2xl shadow-[#B5926A]/10">
+              <Image
+                src="/images/uploads/profile.jpg"
+                alt="Julia Martinez — Social Media Manager"
+                fill
+                className="object-cover object-top"
+                priority
+              />
+              {/* Placeholder shown when no image is present */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-[#1A1714]/20">
+                <svg className="w-20 h-20 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+                </svg>
+                <p className="text-sm font-medium">Zdjęcie profilowe</p>
+              </div>
+
+              {/* Subtle gradient overlay at bottom */}
+              <div
+                className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+                style={{ background: "linear-gradient(to top, rgba(240,235,227,0.4) 0%, transparent 100%)" }}
+                aria-hidden="true"
+              />
+            </div>
+
+            {/* Floating stat badges */}
+            <div className="absolute -bottom-2 -left-2 md:left-0 bg-white border border-[#EAE5DF] rounded-2xl px-5 py-4 shadow-lg shadow-[#1A1714]/5">
+              <div className="text-2xl font-bold text-[#1A1714] mb-0.5">5+ lat</div>
+              <div className="text-xs text-[#8A8078] tracking-wide">doświadczenia</div>
+            </div>
+            <div className="absolute -top-2 -right-2 md:right-0 bg-[#B5926A] rounded-2xl px-5 py-4 shadow-lg shadow-[#B5926A]/20">
+              <div className="text-2xl font-bold text-white mb-0.5">50+</div>
+              <div className="text-xs text-white/70 tracking-wide">marek</div>
+            </div>
+          </div>
+
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs tracking-widest uppercase text-[#0a0a0a]">
-          Scroll
-        </span>
-        <div className="w-px h-12 bg-[#0a0a0a] animate-pulse" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
+        <span className="text-[10px] tracking-[0.2em] uppercase text-[#1A1714]">Przewiń</span>
+        <div className="w-px h-10 bg-[#1A1714] animate-pulse" />
       </div>
     </section>
   );

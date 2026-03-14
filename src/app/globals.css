@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #fafaf8;
-  --color-foreground: #0a0a0a;
-  --color-accent: #ff6b35;
-  --color-accent-hover: #e55a24;
-  --color-muted: #6b7280;
-  --color-border: #e5e5e3;
+  --color-background: #FDFCFA;
+  --color-foreground: #1A1714;
+  --color-accent: #B5926A;
+  --color-accent-hover: #9A7A55;
+  --color-muted: #8A8078;
+  --color-border: #EAE5DF;
   --color-card: #ffffff;
+  --color-linen: #F5F0E8;
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;
@@ -23,6 +24,11 @@ body {
   font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero photo organic shape */
+.hero-photo-clip {
+  clip-path: ellipse(90% 95% at 55% 50%);
 }
 
 /* Custom scrollbar */

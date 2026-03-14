@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ReelItem } from "@/lib/content";
 
 function ReelCard({ reel }: { reel: ReelItem }) {
-  // Detect if it's an embeddable URL
   const isEmbed =
     reel.videoUrl.includes("youtube.com/embed") ||
     reel.videoUrl.includes("youtu.be") ||
@@ -16,7 +15,7 @@ function ReelCard({ reel }: { reel: ReelItem }) {
   return (
     <article className="group relative flex flex-col">
       {/* Video container — 9:16 aspect ratio */}
-      <div className="relative w-full aspect-[9/16] bg-[#0a0a0a] rounded-2xl overflow-hidden">
+      <div className="relative w-full aspect-[9/16] bg-[#1A1714] rounded-2xl overflow-hidden">
         {isEmbed ? (
           <iframe
             src={reel.videoUrl}
@@ -46,7 +45,7 @@ function ReelCard({ reel }: { reel: ReelItem }) {
             loading="lazy"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a]">
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#2a2520] to-[#1A1714]">
             <div className="text-center text-white/20">
               <svg
                 className="w-10 h-10 mx-auto mb-2"
@@ -100,21 +99,21 @@ export default function Reels({ items }: { items: ReelItem[] }) {
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         {/* Section header */}
         <div className="flex items-center gap-3 mb-6">
-          <span className="block w-10 h-px bg-[#ff6b35]" aria-hidden="true" />
-          <span className="text-sm font-medium text-[#ff6b35] uppercase tracking-widest">
+          <span className="block w-10 h-px bg-[#B5926A]" aria-hidden="true" />
+          <span className="text-sm font-medium text-[#B5926A] uppercase tracking-widest">
             Reels
           </span>
         </div>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold leading-tight text-[#0a0a0a]"
-            style={{ fontFamily: "\"Playfair Display\", Georgia, serif" }}
+            className="text-4xl md:text-5xl font-bold leading-tight text-[#1A1714]"
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
           >
-            Reel portfolio.
+            Portfolio wideo.
           </h2>
-          <p className="text-[#0a0a0a]/50 text-base max-w-sm leading-relaxed">
-            Short-form video content crafted for maximum engagement and
-            reach.
+          <p className="text-[#1A1714]/50 text-base max-w-sm leading-relaxed">
+            Krótkie formy wideo tworzone z myślą o maksymalnym zaangażowaniu
+            i zasięgu.
           </p>
         </div>
 
@@ -126,8 +125,8 @@ export default function Reels({ items }: { items: ReelItem[] }) {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 text-[#0a0a0a]/30">
-            <p>Reels will appear here once added via the CMS.</p>
+          <div className="text-center py-20 text-[#1A1714]/30">
+            <p>Reels pojawią się tutaj po dodaniu przez CMS.</p>
           </div>
         )}
       </div>

@@ -61,36 +61,36 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-[#0a0a0a]">
+    <section id="contact" className="py-24 md:py-32 bg-[#F5F0E8]">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left column */}
           <div>
             <div className="flex items-center gap-3 mb-8">
               <span
-                className="block w-10 h-px bg-[#ff6b35]"
+                className="block w-10 h-px bg-[#B5926A]"
                 aria-hidden="true"
               />
-              <span className="text-sm font-medium text-[#ff6b35] uppercase tracking-widest">
-                Contact
+              <span className="text-sm font-medium text-[#B5926A] uppercase tracking-widest">
+                Kontakt
               </span>
             </div>
             <h2
-              className="text-4xl md:text-5xl font-bold leading-tight text-white mb-8"
-              style={{ fontFamily: "\"Playfair Display\", Georgia, serif" }}
+              className="text-4xl md:text-5xl font-bold leading-tight text-[#1A1714] mb-8"
+              style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
-              Ready to grow
+              Gotowy na wzrost
               <br />
-              your brand?
+              swojej marki?
             </h2>
-            <p className="text-white/50 text-lg leading-relaxed mb-12">
-              Whether you&apos;re looking for a full social media strategy,
-              ongoing management, or a one-off campaign — let&apos;s talk.
+            <p className="text-[#1A1714]/55 text-lg leading-relaxed mb-12">
+              Czy szukasz kompleksowej strategii social media, bieżącego
+              zarządzania czy jednorazowej kampanii — porozmawiajmy.
             </p>
 
             {/* Email */}
             <div className="flex items-center gap-4 mb-12">
-              <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40">
+              <div className="w-12 h-12 rounded-full border border-[#EAE5DF] bg-white flex items-center justify-center text-[#B5926A]">
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -107,7 +107,7 @@ export default function Contact() {
               </div>
               <a
                 href="mailto:hello@juliamartinez.co"
-                className="text-white hover:text-[#ff6b35] transition-colors duration-200 text-lg"
+                className="text-[#1A1714] hover:text-[#B5926A] transition-colors duration-200 text-lg"
               >
                 hello@juliamartinez.co
               </a>
@@ -123,12 +123,12 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 group"
                 >
-                  <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 group-hover:text-[#ff6b35] group-hover:border-[#ff6b35]/30 transition-all duration-200">
+                  <div className="w-10 h-10 rounded-full border border-[#EAE5DF] bg-white flex items-center justify-center text-[#8A8078] group-hover:text-[#B5926A] group-hover:border-[#B5926A]/40 transition-all duration-200">
                     {s.icon}
                   </div>
-                  <span className="text-white/50 group-hover:text-white transition-colors duration-200 text-sm">
+                  <span className="text-[#1A1714]/50 group-hover:text-[#1A1714] transition-colors duration-200 text-sm">
                     {s.handle}
-                    <span className="text-white/20 ml-2">· {s.label}</span>
+                    <span className="text-[#1A1714]/30 ml-2">· {s.label}</span>
                   </span>
                 </a>
               ))}
@@ -138,10 +138,10 @@ export default function Contact() {
           {/* Right column — form */}
           <div>
             {submitted ? (
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-10 text-center">
-                <div className="w-16 h-16 rounded-full bg-[#ff6b35]/20 flex items-center justify-center mx-auto mb-6">
+              <div className="bg-white border border-[#EAE5DF] rounded-2xl p-10 text-center shadow-sm">
+                <div className="w-16 h-16 rounded-full bg-[#B5926A]/15 flex items-center justify-center mx-auto mb-6">
                   <svg
-                    className="w-8 h-8 text-[#ff6b35]"
+                    className="w-8 h-8 text-[#B5926A]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -154,11 +154,11 @@ export default function Contact() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-white text-2xl font-semibold mb-3">
-                  Message sent!
+                <h3 className="text-[#1A1714] text-2xl font-semibold mb-3">
+                  Wiadomość wysłana!
                 </h3>
-                <p className="text-white/50">
-                  Thanks for reaching out. I&apos;ll get back to you within 24 hours.
+                <p className="text-[#1A1714]/50">
+                  Dziękuję za kontakt. Odezwę się w ciągu 24 godzin.
                 </p>
               </div>
             ) : (
@@ -168,7 +168,7 @@ export default function Contact() {
                 data-netlify="true"
                 netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
-                className="space-y-5"
+                className="space-y-5 bg-white rounded-2xl p-8 border border-[#EAE5DF] shadow-sm"
               >
                 {/* Netlify form detection */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -177,60 +177,60 @@ export default function Contact() {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-white/50 text-xs font-medium mb-2 uppercase tracking-wider"
+                    className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider"
                   >
-                    Your name
+                    Twoje imię
                   </label>
                   <input
                     id="name"
                     name="name"
                     type="text"
                     required
-                    placeholder="Jane Smith"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#ff6b35]/50 focus:ring-1 focus:ring-[#ff6b35]/30 transition-colors duration-200 text-base"
+                    placeholder="Jan Kowalski"
+                    className="w-full bg-[#FDFCFA] border border-[#EAE5DF] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-white/50 text-xs font-medium mb-2 uppercase tracking-wider"
+                    className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider"
                   >
-                    Email address
+                    Adres e-mail
                   </label>
                   <input
                     id="email"
                     name="email"
                     type="email"
                     required
-                    placeholder="jane@example.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#ff6b35]/50 focus:ring-1 focus:ring-[#ff6b35]/30 transition-colors duration-200 text-base"
+                    placeholder="jan@firma.pl"
+                    className="w-full bg-[#FDFCFA] border border-[#EAE5DF] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base"
                   />
                 </div>
 
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-white/50 text-xs font-medium mb-2 uppercase tracking-wider"
+                    className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider"
                   >
-                    Message
+                    Wiadomość
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     required
                     rows={5}
-                    placeholder="Tell me about your brand and what you're looking for..."
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-white/20 focus:outline-none focus:border-[#ff6b35]/50 focus:ring-1 focus:ring-[#ff6b35]/30 transition-colors duration-200 text-base resize-none"
+                    placeholder="Opowiedz mi o swojej marce i czego szukasz..."
+                    className="w-full bg-[#FDFCFA] border border-[#EAE5DF] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full bg-[#ff6b35] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#e55a24] transition-all duration-200 hover:shadow-lg hover:shadow-[#ff6b35]/20 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
+                  className="w-full bg-[#B5926A] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#9A7A55] transition-all duration-200 hover:shadow-lg hover:shadow-[#B5926A]/25 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
                 >
-                  {sending ? "Sending..." : "Send message"}
+                  {sending ? "Wysyłanie..." : "Wyślij wiadomość"}
                 </button>
               </form>
             )}

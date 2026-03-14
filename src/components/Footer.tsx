@@ -1,25 +1,25 @@
 const currentYear = new Date().getFullYear();
 
 const footerLinks = [
-  { label: "About", href: "#about" },
+  { label: "O mnie", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Reels", href: "#reels" },
-  { label: "Contact", href: "#contact" },
+  { label: "Kontakt", href: "#contact" },
   { label: "Admin", href: "/admin" },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t border-white/5 py-12">
+    <footer className="bg-[#1A1714] border-t border-white/5 py-12">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <a
             href="#"
             className="text-white font-semibold text-lg tracking-tight"
-            style={{ fontFamily: "\"Playfair Display\", Georgia, serif" }}
+            style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
           >
-            Julia <span className="text-[#ff6b35]">Martinez</span>
+            Julia <span className="text-[#B5926A]">Martinez</span>
           </a>
 
           {/* Links */}
