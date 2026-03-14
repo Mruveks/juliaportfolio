@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #FDFCFA;
+  --color-background: #F3EDE3;
+  --color-surface: #EDE7DC;
+  --color-card: #FDFAF6;
   --color-foreground: #1A1714;
   --color-accent: #B5926A;
   --color-accent-hover: #9A7A55;
   --color-muted: #8A8078;
-  --color-border: #EAE5DF;
-  --color-card: #ffffff;
-  --color-linen: #F5F0E8;
+  --color-border: #DDD6CB;
+  --color-linen: #E9E0D2;
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Playfair Display", Georgia, serif;

@@ -41,31 +41,23 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#FDFCFA]">
-      {/* Subtle warm gradient background */}
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#F3EDE3]">
       <div
-        className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-[0.06] pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #B5926A 0%, transparent 65%)",
-          transform: "translate(25%, -20%)",
-        }}
+        className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-[0.08] pointer-events-none"
+        style={{ background: "radial-gradient(circle, #B5926A 0%, transparent 65%)", transform: "translate(25%, -20%)" }}
         aria-hidden="true"
       />
       <div
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.04] pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, #B5926A 0%, transparent 70%)",
-          transform: "translate(-30%, 30%)",
-        }}
+        className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full opacity-[0.05] pointer-events-none"
+        style={{ background: "radial-gradient(circle, #B5926A 0%, transparent 70%)", transform: "translate(-30%, 30%)" }}
         aria-hidden="true"
       />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 pt-24 pb-16 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-10rem)]">
 
-          {/* LEFT — Text content */}
+          {/* LEFT */}
           <div className="flex flex-col justify-center order-2 lg:order-1">
-            {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-6">
               <span className="block w-8 h-px bg-[#B5926A]" aria-hidden="true" />
               <span className="text-xs font-semibold text-[#B5926A] uppercase tracking-[0.18em]">
@@ -73,7 +65,6 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Name — the most prominent element */}
             <h1
               className="text-6xl sm:text-7xl md:text-8xl font-bold leading-[1.0] tracking-tight text-[#1A1714] mb-4"
               style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
@@ -83,13 +74,11 @@ export default function Hero() {
               <span className="text-[#B5926A]">Martinez</span>
             </h1>
 
-            {/* Tagline */}
             <p className="text-lg md:text-xl text-[#1A1714]/55 mb-10 leading-relaxed max-w-md">
               Pomagam markom rosnąć w mediach społecznościowych poprzez
               przemyślaną strategię, angażujące treści i realne wyniki.
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a
                 href="#contact"
@@ -102,19 +91,12 @@ export default function Hero() {
                 className="inline-flex items-center justify-center border border-[#1A1714]/20 text-[#1A1714] px-8 py-4 rounded-full text-sm font-medium hover:border-[#B5926A] hover:text-[#B5926A] transition-all duration-200 hover:-translate-y-0.5"
               >
                 Zobacz moje prace
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.8}
-                >
+                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
             </div>
 
-            {/* Social icons */}
             <div className="flex items-center gap-2">
               <span className="text-xs text-[#1A1714]/35 mr-2 tracking-wide">Znajdź mnie</span>
               {socialLinks.map((social) => (
@@ -124,7 +106,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-[#EAE5DF] text-[#1A1714]/40 hover:text-[#B5926A] hover:border-[#B5926A]/40 transition-all duration-200 hover:-translate-y-0.5"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-[#DDD6CB] text-[#1A1714]/40 hover:text-[#B5926A] hover:border-[#B5926A]/40 transition-all duration-200 hover:-translate-y-0.5"
                 >
                   {social.icon}
                 </a>
@@ -132,20 +114,12 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT — Portrait photo */}
+          {/* RIGHT — Portrait */}
           <div className="relative flex items-center justify-center order-1 lg:order-2">
-            {/* Decorative ring */}
-            <div
-              className="absolute w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full border border-[#EAE5DF]"
-              aria-hidden="true"
-            />
-            <div
-              className="absolute w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full border border-[#B5926A]/15"
-              aria-hidden="true"
-            />
+            <div className="absolute w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full border border-[#DDD6CB]" aria-hidden="true" />
+            <div className="absolute w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full border border-[#B5926A]/15" aria-hidden="true" />
 
-            {/* Photo container */}
-            <div className="relative w-[300px] h-[380px] md:w-[380px] md:h-[470px] rounded-[2.5rem] overflow-hidden bg-[#F0EBE3] shadow-2xl shadow-[#B5926A]/10">
+            <div className="relative w-[300px] h-[380px] md:w-[380px] md:h-[470px] rounded-[2.5rem] overflow-hidden bg-[#E4DDD2] shadow-2xl shadow-[#B5926A]/10">
               <Image
                 src="/images/uploads/profile.jpg"
                 alt="Julia Martinez — Social Media Manager"
@@ -153,24 +127,16 @@ export default function Hero() {
                 className="object-cover object-top"
                 priority
               />
-              {/* Placeholder shown when no image is present */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-[#1A1714]/20">
                 <svg className="w-20 h-20 mb-3" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
                 </svg>
                 <p className="text-sm font-medium">Zdjęcie profilowe</p>
               </div>
-
-              {/* Subtle gradient overlay at bottom */}
-              <div
-                className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-                style={{ background: "linear-gradient(to top, rgba(240,235,227,0.4) 0%, transparent 100%)" }}
-                aria-hidden="true"
-              />
+              <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(228,221,210,0.4) 0%, transparent 100%)" }} aria-hidden="true" />
             </div>
 
-            {/* Floating stat badges */}
-            <div className="absolute -bottom-2 -left-2 md:left-0 bg-white border border-[#EAE5DF] rounded-2xl px-5 py-4 shadow-lg shadow-[#1A1714]/5">
+            <div className="absolute -bottom-2 -left-2 md:left-0 bg-[#FDFAF6] border border-[#DDD6CB] rounded-2xl px-5 py-4 shadow-lg shadow-[#1A1714]/5">
               <div className="text-2xl font-bold text-[#1A1714] mb-0.5">5+ lat</div>
               <div className="text-xs text-[#8A8078] tracking-wide">doświadczenia</div>
             </div>
@@ -183,7 +149,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
         <span className="text-[10px] tracking-[0.2em] uppercase text-[#1A1714]">Przewiń</span>
         <div className="w-px h-10 bg-[#1A1714] animate-pulse" />
