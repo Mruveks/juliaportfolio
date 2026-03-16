@@ -1,13 +1,10 @@
 ---
 hero_eyebrow: Social Media Manager
 hero_tagline: >-
-  Mam na imię Julia i zajmuję się social media marketingiem.
+  Mam na imię Julia i zawodowo zajmuję się social media marketingiem.
 
-  Tworzę strategie oraz content, który pomaga markom wyróżnić się w social media.
-
-
-  Specjalizuję się w short video i zdjęciach produktowych – stawiam na estetykę, naturalność i autentyczną prezentację produktów.
-hero_cta_primary: Współpracuj ze mną
+  Działam też jako content creator - tworzę short videos oraz zdjęcia. Dbam o estetykę, naturalność, ekspozycję produktu.
+hero_cta_primary: Nawiąż współpracę
 hero_cta_secondary: Zobacz moje prace
 hero_stat_years: 5+
 hero_stat_years_label: lat doświadczenia
@@ -47,18 +44,18 @@ stats:
     display: 98%
     label: Zadowolonych klientów
 brands:
-  - name: Vogue Poland
-    abbr: VP
-  - name: Reserved
-    abbr: RE
-  - name: Allegro
-    abbr: AL
-  - name: CCC Group
+  - name: AuraCare
+    abbr: AC
+  - name: CeraVe
+    abbr: CV
+  - name: Nutridome
+    abbr: N
+  - name: Canephron
+    abbr: C
+  - name: Skini
+    abbr: S
+  - name: Change Into Colours
     abbr: CC
-  - name: Dior Beauty
-    abbr: DB
-  - name: Empik
-    abbr: EM
 testimonials:
   - quote: Julia całkowicie odmieniła nasze podejście do social mediów. W ciągu 6
       miesięcy wzrósł nam zasięg o 240%, a sprzedaż z Instagrama podwoiła się.
@@ -79,9 +76,7 @@ testimonials:
     role: Head of Marketing
     company: Fashion Forward
     initials: KD
-contact_heading: |-
-  Gotowy na wzrost
-  swojej marki?
+contact_heading: Stwórzmy coś razem!
 contact_subtext: Czy szukasz kompleksowej strategii social media, bieżącego
   zarządzania czy jednorazowej kampanii - porozmawiajmy.
 ---
