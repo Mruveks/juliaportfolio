@@ -124,7 +124,7 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
               Wybrane realizacje.
             </h2>
             <p className="text-[#1A1714]/50 text-base max-w-sm leading-relaxed">
-              Kampanie, strategie i treści — przeciągnij, żeby zobaczyć więcej.
+              Kampanie, strategie i treści.
             </p>
           </div>
         </FadeUp>

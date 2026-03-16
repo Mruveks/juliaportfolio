@@ -8,8 +8,8 @@ export default function About({ content }: { content: SiteContent }) {
   return (
     <section id="about" className="py-24 md:py-32 bg-[#EDE7DC] relative overflow-hidden">
       {/* Decorative circles */}
-      <div className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full border border-[#B5926A]/10 pointer-events-none" aria-hidden="true" />
-      <div className="absolute -top-20 -left-20 w-[320px] h-[320px] rounded-full border border-[#B5926A]/8 pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full border border-gray-400 pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-20 -left-20 w-[320px] h-[320px] rounded-full border border-gray-400 pointer-events-none" aria-hidden="true" />
       {/* Dot grid bottom-right */}
       <div className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none" aria-hidden="true"
         style={{

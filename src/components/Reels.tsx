@@ -93,14 +93,14 @@ export default function Reels({ items }: { items: ReelItem[] }) {
             -45deg,
             transparent,
             transparent 18px,
-            #B5926A0C 18px,
+            lightgray 18px,
             #B5926A0C 19px
           )`,
         }}
       />
       {/* Decorative rings (matching hero style) */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-[#B5926A]/10 pointer-events-none" aria-hidden="true" />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[380px] h-[380px] rounded-full border border-[#B5926A]/8 pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-black pointer-events-none" aria-hidden="true" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-[380px] h-[380px] rounded-full border border-black pointer-events-none" aria-hidden="true" />
 
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 relative">
         <FadeUp>
@@ -116,7 +116,7 @@ export default function Reels({ items }: { items: ReelItem[] }) {
               Portfolio wideo.
             </h2>
             <p className="text-[#1A1714]/50 text-base max-w-sm leading-relaxed">
-              Krótkie formy wideo tworzone z myślą o maksymalnym zaangażowaniu — przeciągnij.
+              Krótkie formy wideo tworzone z myślą o maksymalnym zaangażowaniu.
             </p>
           </div>
         </FadeUp>
