@@ -21,7 +21,7 @@ export default function VisitCounter() {
 
   return (
     <span className="text-xs text-white/20 tabular-nums" title="Łączna liczba odwiedzin">
-      {count.toLocaleString("pl-PL")} wizyt
+      {count.toLocaleString("pl-PL")} odwiedzających 
     </span>
   );
 }

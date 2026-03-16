@@ -21,7 +21,7 @@ export default function Footer() {
             className="text-white font-semibold text-lg tracking-tight"
             style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
           >
-            Julia <span className="text-[#B5926A]">Martinez</span>
+            Julia <span className="text-[#B5926A]">Gałecka</span>
           </a>
 
           <nav className="flex items-center flex-wrap justify-center gap-6">
@@ -33,7 +33,7 @@ export default function Footer() {
           </nav>
 
           <div className="flex flex-col items-end gap-1.5">
-            <p className="text-sm text-white/20">© {currentYear} Julia Martinez</p>
+            <p className="text-sm text-white/20">© {currentYear} Julia Gałecka</p>
             <VisitCounter />
           </div>
         </div>
