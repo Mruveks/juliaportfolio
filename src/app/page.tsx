@@ -20,8 +20,6 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero content={content} />
-        <Brands content={content} />
-        <Stats content={content} />
         <About content={content} />
         <Portfolio items={portfolioItems} />
         <Reels items={reelItems} />
