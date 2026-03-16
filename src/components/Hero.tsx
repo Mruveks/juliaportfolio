@@ -124,7 +124,7 @@ export default function Hero({ content }: { content: SiteContent }) {
           </div>
 
           {/* RIGHT - Portrait */}
-          <div className="relative flex items-center justify-center order-1 lg:order-2">
+          <div className="relative flex items-center justify-center order-2">
             <div className="absolute w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full border border-[#DDD6CB]" aria-hidden="true" />
             <div className="absolute w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full border border-[#B5926A]/15" aria-hidden="true" />
 

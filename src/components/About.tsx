@@ -11,7 +11,7 @@ export default function About({ content }: { content: SiteContent }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeUp>
             <div className="relative">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#E4DDD2]">
+              <div className="relative aspect-5/5 lg:aspect-[4/5] rounded-3xl overflow-hidden bg-[#E4DDD2]">
                 <Image
                   src="/images/uploads/profile.jpg"
                   alt="Julia - Social Media Manager"
