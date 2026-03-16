@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: claude/portfolio-website-nextjs-r6tOg
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
