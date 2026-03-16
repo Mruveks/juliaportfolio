@@ -23,7 +23,12 @@ collections:
           - { label: "Lata doświadczenia (etykieta)", name: "hero_stat_years_label", widget: "string" }
           - { label: "Liczba marek (liczba)", name: "hero_stat_brands", widget: "string" }
           - { label: "Liczba marek (etykieta)", name: "hero_stat_brands_label", widget: "string" }
-          - { label: "Nagłówek 'O mnie'", name: "about_heading", widget: "string", hint: "Użyj \\n aby podzielić na dwie linie" }
+          - {
+              label: "Nagłówek 'O mnie'",
+              name: "about_heading",
+              widget: "string",
+              hint: "Użyj \\n aby podzielić na dwie linie",
+            }
           - { label: "Bio - akapit 1", name: "about_bio_1", widget: "text" }
           - { label: "Bio - akapit 2", name: "about_bio_2", widget: "text" }
           - label: "Umiejętności"
@@ -69,7 +74,12 @@ collections:
                 field: { label: "Funkcja", name: "item", widget: "string" }
               - { label: "Tekst przycisku CTA", name: "cta", widget: "string" }
               - { label: "Wyróżniony?", name: "highlighted", widget: "boolean", default: false }
-          - { label: "Nagłówek kontaktu", name: "contact_heading", widget: "string", hint: "Użyj \\n aby podzielić na dwie linie" }
+          - {
+              label: "Nagłówek kontaktu",
+              name: "contact_heading",
+              widget: "string",
+              hint: "Użyj \\n aby podzielić na dwie linie",
+            }
           - { label: "Podtytuł kontaktu", name: "contact_subtext", widget: "text" }
 
   - name: "portfolio"
@@ -114,20 +124,12 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Tytuł", name: "title", widget: "string" }
-      - label: "Opis"
-        name: "description"
-        widget: "text"
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+
+      - label: "Video"
+        name: "video"
+        widget: "file"
         required: false
-      - label: "URL wideo"
-        name: "videoUrl"
-        widget: "string"
-        hint: "YouTube, Vimeo lub bezpośredni URL wideo"
-      - label: "Miniatura"
-        name: "thumbnail"
-        widget: "image"
-        required: false
-      - label: "Kolejność"
-        name: "order"
-        widget: "number"
-        default: 0
+
+      - { label: "Order", name: "order", widget: "number" }

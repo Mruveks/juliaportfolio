@@ -6,7 +6,6 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import Reels from "@/components/Reels";
 import Testimonials from "@/components/Testimonials";
-import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { getPortfolioItems, getReelItems, getSiteContent } from "@/lib/content";
@@ -27,7 +26,6 @@ export default function Home() {
         <Portfolio items={portfolioItems} />
         <Reels items={reelItems} />
         <Testimonials content={content} />
-        <Pricing content={content} />
         <Contact content={content} />
       </main>
       <Footer />

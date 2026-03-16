@@ -3,7 +3,7 @@ import { FadeUp, SectionHeader } from "@/components/ui/Animate";
 
 export default function Testimonials({ content }: { content: SiteContent }) {
   return (
-    <section className="py-24 md:py-32 bg-[#EDE7DC]">
+    <section className="py-24 md:py-32 bg-[#F3EDE3]">
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <SectionHeader
           eyebrow="Opinie"

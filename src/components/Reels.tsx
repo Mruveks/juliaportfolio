@@ -6,12 +6,10 @@ function ReelCard({ reel, index }: { reel: ReelItem; index: number }) {
   const isEmbed =
     reel.videoUrl.includes("youtube.com/embed") ||
     reel.videoUrl.includes("youtu.be") ||
-    reel.videoUrl.includes("vimeo.com");
-
+    reel.videoUrl.includes("vimeo.com") ||
+    reel.videoUrl.includes("tiktok.com");
   const isDirectVideo =
-    reel.videoUrl.endsWith(".mp4") ||
-    reel.videoUrl.endsWith(".webm") ||
-    reel.videoUrl.endsWith(".mov");
+    reel.videoUrl.endsWith(".mp4") || reel.videoUrl.endsWith(".webm") || reel.videoUrl.endsWith(".mov");
 
   return (
     <FadeUp delay={index * 80}>
@@ -49,11 +47,7 @@ function ReelCard({ reel, index }: { reel: ReelItem; index: number }) {
           ) : (
             <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#2a2520] to-[#1A1714]">
               <div className="text-center text-white/20">
-                <svg
-                  className="w-10 h-10 mx-auto mb-2"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-10 h-10 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
                 <p className="text-xs">Reel</p>
@@ -68,11 +62,7 @@ function ReelCard({ reel, index }: { reel: ReelItem; index: number }) {
           {!isEmbed && (
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
               <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
-                <svg
-                  className="w-6 h-6 text-white ml-0.5"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
+                <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
@@ -81,14 +71,8 @@ function ReelCard({ reel, index }: { reel: ReelItem; index: number }) {
 
           {/* Bottom overlay text */}
           <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-            <h3 className="text-white font-semibold text-sm leading-tight">
-              {reel.title}
-            </h3>
-            {reel.description && (
-              <p className="text-white/60 text-xs mt-1 line-clamp-2">
-                {reel.description}
-              </p>
-            )}
+            <h3 className="text-white font-semibold text-sm leading-tight">{reel.title}</h3>
+            {reel.description && <p className="text-white/60 text-xs mt-1 line-clamp-2">{reel.description}</p>}
           </div>
         </div>
       </article>
@@ -111,8 +95,7 @@ export default function Reels({ items }: { items: ReelItem[] }) {
                 Portfolio wideo.
               </h2>
               <p className="text-[#1A1714]/50 text-base max-w-sm leading-relaxed">
-                Krótkie formy wideo tworzone z myślą o maksymalnym zaangażowaniu
-                i zasięgu.
+                Krótkie formy wideo tworzone z myślą o maksymalnym zaangażowaniu i zasięgu.
               </p>
             </div>
           }
