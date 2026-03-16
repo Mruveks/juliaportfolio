@@ -1,8 +1,8 @@
 ---
 hero_eyebrow: Social Media Manager
-hero_tagline: Zawodowo zajmuję się social media marketingiem. Działam też jako
-  content creator - tworzę short videos oraz zdjęcia. Dbam o estetykę,
-  naturalność, ekspozycję produktu.
+hero_tagline: Zawodowo związana z social media marketingiem, z pasji content
+  creatorka - tworzę short videos oraz zdjęcia. Dbam o estetykę, naturalność,
+  ekspozycję produktu.
 hero_cta_primary: Nawiąż współpracę
 hero_cta_secondary: Zobacz moje prace
 hero_stat_years: 5+
