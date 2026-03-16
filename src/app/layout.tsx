@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-const siteUrl = "https://juliamartinez.co";
-const siteName = "Julia";
+const siteUrl = "https://juliagalecka.pl";
+const siteName = "Julia Gałecka";
 const siteDescription =
-  "Social Media Manager pomagająca markom rosnąć w mediach społecznościowych. Strategia treści, wzrost na Instagramie, TikTok i analityka oparta na danych.";
+  "Social Media Manager pomagająca markom rosnąć w mediach społecznościowych. Trendy, voice over, krótkie wideo i fotografia produktowa.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     "social media polska",
     "menadżer social media",
   ],
-  authors: [{ name: "Julia Martinez" }],
-  creator: "Julia Martinez",
+  authors: [{ name: "Julia Gałecka" }],
+  creator: "Julia Gałecka",
   openGraph: {
     type: "website",
     locale: "pl_PL",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteName,
     description: siteDescription,
-    creator: "@juliamartinez",
+    creator: "@julia",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -67,7 +67,7 @@ const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Julia Martinez",
+  name: "Julia Gałecka",
   jobTitle: "Social Media Manager",
   url: siteUrl,
   image: `${siteUrl}/images/uploads/profile.jpg`,
@@ -79,9 +79,9 @@ const jsonLd = {
     addressCountry: "PL",
   },
   sameAs: [
-    "https://instagram.com/juliamartinez",
-    "https://tiktok.com/@juliamartinez",
-    "https://linkedin.com/in/juliamartinez",
+    "https://instagram.com/julia",
+    "https://tiktok.com/@julia",
+    "https://linkedin.com/in/julia",
   ],
   offers: {
     "@type": "Offer",
@@ -94,7 +94,7 @@ const jsonLd = {
       priceCurrency: "PLN",
       unitText: "miesięcznie",
     },
-    seller: { "@type": "Person", name: "Julia Martinez" },
+    seller: { "@type": "Person", name: "Julia Gałecka" },
   },
 };
 

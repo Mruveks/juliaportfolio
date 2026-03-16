@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { HeroReveal, FadeUp } from "@/components/ui/Animate";
+import { SiteContent } from "@/lib/content";
 
 const socialLinks = [
   {
@@ -39,7 +43,7 @@ const socialLinks = [
   },
 ];
 
-export default function Hero() {
+export default function Hero({ content }: { content: SiteContent }) {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#F3EDE3]">
       <div
@@ -58,60 +62,65 @@ export default function Hero() {
 
           {/* LEFT */}
           <div className="flex flex-col justify-center order-2 lg:order-1">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="block w-8 h-px bg-[#B5926A]" aria-hidden="true" />
-              <span className="text-xs font-semibold text-[#B5926A] uppercase tracking-[0.18em]">
-                Social Media Manager
-              </span>
-            </div>
+            <FadeUp delay={0}>
+              <div className="flex items-center gap-3 mb-6">
+                <span className="block w-8 h-px bg-[#B5926A]" aria-hidden="true" />
+                <span className="text-xs font-semibold text-[#B5926A] uppercase tracking-[0.18em]">
+                  {content.hero_eyebrow}
+                </span>
+              </div>
+            </FadeUp>
 
             <h1
               className="text-6xl sm:text-7xl md:text-8xl font-bold leading-[1.0] tracking-tight text-[#1A1714] mb-4"
               style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
-              Julia
-              <br />
-              <span className="text-[#B5926A]">Gałecka</span>
+              <HeroReveal lines={[{ text: "Julia" }, { text: "Gałecka", accent: true }]} />
             </h1>
 
-            <p className="text-lg md:text-xl text-[#1A1714]/55 mb-10 leading-relaxed max-w-md">
-              Pomagam markom rosnąć w mediach społecznościowych poprzez
-              przemyślaną strategię, angażujące treści i realne wyniki.
-            </p>
+            <FadeUp delay={400}>
+              <p className="text-lg md:text-xl text-[#1A1714]/55 mb-10 leading-relaxed max-w-md">
+                {content.hero_tagline}
+              </p>
+            </FadeUp>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center bg-[#B5926A] text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-[#9A7A55] transition-all duration-200 hover:shadow-lg hover:shadow-[#B5926A]/25 hover:-translate-y-0.5"
-              >
-                Współpracuj ze mną
-              </a>
-              <a
-                href="#portfolio"
-                className="inline-flex items-center justify-center border border-[#1A1714]/20 text-[#1A1714] px-8 py-4 rounded-full text-sm font-medium hover:border-[#B5926A] hover:text-[#B5926A] transition-all duration-200 hover:-translate-y-0.5"
-              >
-                Zobacz moje prace
-                <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-[#1A1714]/35 mr-2 tracking-wide">Znajdź mnie</span>
-              {socialLinks.map((social) => (
+            <FadeUp delay={550}>
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-[#DDD6CB] text-[#1A1714]/40 hover:text-[#B5926A] hover:border-[#B5926A]/40 transition-all duration-200 hover:-translate-y-0.5"
+                  href="#contact"
+                  className="inline-flex items-center justify-center bg-[#B5926A] text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide hover:bg-[#9A7A55] transition-all duration-200 hover:shadow-lg hover:shadow-[#B5926A]/25 hover:-translate-y-0.5"
                 >
-                  {social.icon}
+                  {content.hero_cta_primary}
                 </a>
-              ))}
-            </div>
+                <a
+                  href="#portfolio"
+                  className="inline-flex items-center justify-center border border-[#1A1714]/20 text-[#1A1714] px-8 py-4 rounded-full text-sm font-medium hover:border-[#B5926A] hover:text-[#B5926A] transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  {content.hero_cta_secondary}
+                  <svg className="ml-2 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </FadeUp>
+
+            <FadeUp delay={700}>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-[#1A1714]/35 mr-2 tracking-wide">Znajdź mnie</span>
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-9 h-9 flex items-center justify-center rounded-full border border-[#DDD6CB] text-[#1A1714]/40 hover:text-[#B5926A] hover:border-[#B5926A]/40 transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </FadeUp>
           </div>
 
           {/* RIGHT - Portrait */}
@@ -137,12 +146,12 @@ export default function Hero() {
             </div>
 
             <div className="absolute -bottom-2 -left-2 md:left-0 bg-[#FDFAF6] border border-[#DDD6CB] rounded-2xl px-5 py-4 shadow-lg shadow-[#1A1714]/5">
-              <div className="text-2xl font-bold text-[#1A1714] mb-0.5">5+ lat</div>
-              <div className="text-xs text-[#8A8078] tracking-wide">doświadczenia</div>
+              <div className="text-2xl font-bold text-[#1A1714] mb-0.5">{content.hero_stat_years}</div>
+              <div className="text-xs text-[#8A8078] tracking-wide">{content.hero_stat_years_label}</div>
             </div>
             <div className="absolute -top-2 -right-2 md:right-0 bg-[#B5926A] rounded-2xl px-5 py-4 shadow-lg shadow-[#B5926A]/20">
-              <div className="text-2xl font-bold text-white mb-0.5">15+</div>
-              <div className="text-xs text-white/70 tracking-wide">marek</div>
+              <div className="text-2xl font-bold text-white mb-0.5">{content.hero_stat_brands}</div>
+              <div className="text-xs text-white/70 tracking-wide">{content.hero_stat_brands_label}</div>
             </div>
           </div>
 

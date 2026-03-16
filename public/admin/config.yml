@@ -2,38 +2,108 @@ backend:
   name: git-gateway
   branch: main
 
+locale: pl
+
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  - name: "pages"
+    label: "Treści strony"
+    files:
+      - name: "home"
+        label: "Strona główna"
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Eyebrow hero", name: "hero_eyebrow", widget: "string" }
+          - { label: "Tagline hero", name: "hero_tagline", widget: "text" }
+          - { label: "CTA główny", name: "hero_cta_primary", widget: "string" }
+          - { label: "CTA drugorzędny", name: "hero_cta_secondary", widget: "string" }
+          - { label: "Lata doświadczenia (liczba)", name: "hero_stat_years", widget: "string" }
+          - { label: "Lata doświadczenia (etykieta)", name: "hero_stat_years_label", widget: "string" }
+          - { label: "Liczba marek (liczba)", name: "hero_stat_brands", widget: "string" }
+          - { label: "Liczba marek (etykieta)", name: "hero_stat_brands_label", widget: "string" }
+          - { label: "Nagłówek 'O mnie'", name: "about_heading", widget: "string", hint: "Użyj \\n aby podzielić na dwie linie" }
+          - { label: "Bio - akapit 1", name: "about_bio_1", widget: "text" }
+          - { label: "Bio - akapit 2", name: "about_bio_2", widget: "text" }
+          - label: "Umiejętności"
+            name: "skills"
+            widget: "list"
+            fields:
+              - { label: "Tytuł", name: "title", widget: "string" }
+              - { label: "Opis", name: "desc", widget: "text" }
+          - label: "Statystyki"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Wartość numeryczna", name: "value", widget: "number" }
+              - { label: "Wyświetlana wartość", name: "display", widget: "string" }
+              - { label: "Etykieta", name: "label", widget: "string" }
+          - label: "Marki (Zaufali mi)"
+            name: "brands"
+            widget: "list"
+            fields:
+              - { label: "Nazwa", name: "name", widget: "string" }
+              - { label: "Skrót (2 litery)", name: "abbr", widget: "string" }
+          - label: "Opinie klientów"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Cytat", name: "quote", widget: "text" }
+              - { label: "Imię i nazwisko", name: "name", widget: "string" }
+              - { label: "Stanowisko", name: "role", widget: "string" }
+              - { label: "Firma", name: "company", widget: "string" }
+              - { label: "Inicjały (2 litery)", name: "initials", widget: "string" }
+          - label: "Pakiety cenowe"
+            name: "pricing"
+            widget: "list"
+            fields:
+              - { label: "Nazwa pakietu", name: "name", widget: "string" }
+              - { label: "Cena", name: "price", widget: "string" }
+              - { label: "Sufiks ceny (np. zł)", name: "price_suffix", widget: "string", required: false }
+              - { label: "Okres (np. / miesiąc)", name: "period", widget: "string" }
+              - { label: "Opis", name: "description", widget: "text" }
+              - label: "Funkcje"
+                name: "features"
+                widget: "list"
+                field: { label: "Funkcja", name: "item", widget: "string" }
+              - { label: "Tekst przycisku CTA", name: "cta", widget: "string" }
+              - { label: "Wyróżniony?", name: "highlighted", widget: "boolean", default: false }
+          - { label: "Nagłówek kontaktu", name: "contact_heading", widget: "string", hint: "Użyj \\n aby podzielić na dwie linie" }
+          - { label: "Podtytuł kontaktu", name: "contact_subtext", widget: "text" }
+
   - name: "portfolio"
     label: "Portfolio"
     folder: "content/portfolio"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - label: "Image"
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - { label: "Opis", name: "description", widget: "text" }
+      - label: "Zdjęcie"
         name: "image"
         widget: "image"
         required: false
-      - label: "Video URL"
+      - label: "Miniatura"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+      - label: "URL wideo"
         name: "videoUrl"
         widget: "string"
         required: false
-        hint: "YouTube or Vimeo URL"
-      - label: "Category"
+        hint: "YouTube lub Vimeo URL"
+      - label: "Kategoria"
         name: "category"
         widget: "select"
         options:
+          - "Trends"
+          - "Voice Over"
+          - "Short Video"
+          - "Product Photo"
+          - "Real Time Marketing"
           - "Brand Campaign"
-          - "Instagram Growth"
-          - "TikTok Content"
-          - "Analytics"
-          - "Strategy"
-          - "Content Creation"
-      - label: "Order"
+      - label: "Kolejność"
         name: "order"
         widget: "number"
         default: 0
@@ -44,20 +114,20 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - label: "Description"
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - label: "Opis"
         name: "description"
         widget: "text"
         required: false
-      - label: "Video URL"
+      - label: "URL wideo"
         name: "videoUrl"
         widget: "string"
-        hint: "YouTube, Vimeo, or direct video URL"
-      - label: "Thumbnail"
+        hint: "YouTube, Vimeo lub bezpośredni URL wideo"
+      - label: "Miniatura"
         name: "thumbnail"
         widget: "image"
         required: false
-      - label: "Order"
+      - label: "Kolejność"
         name: "order"
         widget: "number"
         default: 0
