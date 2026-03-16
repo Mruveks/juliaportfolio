@@ -6,7 +6,6 @@ const footerLinks = [
   { label: "O mnie", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Reels", href: "#reels" },
-  { label: "Pakiety", href: "#pricing" },
   { label: "Kontakt", href: "#contact" },
   { label: "Admin", href: "/admin" },
 ];
