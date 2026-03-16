@@ -72,7 +72,7 @@ export default function Hero({ content }: { content: SiteContent }) {
             </FadeUp>
 
             <h1
-              className="text-6xl sm:text-7xl md:text-8xl font-bold leading-[1.0] tracking-tight text-[#1A1714] mb-4"
+              className="text-6xl sm:text-7xl md:text-8xl font-bold leading-loose tracking-tight text-[#1A1714] mb-4"
               style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
               <HeroReveal lines={[{ text: "Julia" }, { text: "Gałecka", accent: true }]} />

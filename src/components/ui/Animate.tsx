@@ -17,8 +17,10 @@ export function FadeUp({ children, delay = 0, className = "" }: FadeUpProps) {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.12 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.12 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -61,8 +63,10 @@ export function SectionHeader({
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.2 }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.2 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -81,17 +85,11 @@ export function SectionHeader({
         <span className="block w-10 h-px bg-[#B5926A]" aria-hidden="true" />
         <span className="text-sm font-medium text-[#B5926A] uppercase tracking-widest">{eyebrow}</span>
       </div>
-      <div
-        className={`${base} ${visible ? shown : hidden}`}
-        style={{ transitionDelay: "120ms" }}
-      >
+      <div className={`${base} ${visible ? shown : hidden}`} style={{ transitionDelay: "120ms" }}>
         {heading}
       </div>
       {body && (
-        <div
-          className={`${base} ${visible ? shown : hidden}`}
-          style={{ transitionDelay: "240ms" }}
-        >
+        <div className={`${base} ${visible ? shown : hidden}`} style={{ transitionDelay: "240ms" }}>
           {body}
         </div>
       )}
@@ -120,6 +118,7 @@ export function HeroReveal({ lines }: { lines: Array<{ text: string; accent?: bo
               display: "block",
               transform: mounted ? "translateY(0)" : "translateY(105%)",
               transition: `transform 0.9s cubic-bezier(0.16,1,0.3,1) ${i * 140}ms`,
+              paddingBottom: "0.1em",
             }}
             className={line.accent ? "text-[#B5926A]" : ""}
           >
