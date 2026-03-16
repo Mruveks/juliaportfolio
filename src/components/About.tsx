@@ -6,8 +6,20 @@ export default function About({ content }: { content: SiteContent }) {
   const headingLines = content.about_heading.split("\\n");
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-[#EDE7DC]">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+    <section id="about" className="py-24 md:py-32 bg-[#EDE7DC] relative overflow-hidden">
+      {/* Decorative circles */}
+      <div className="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full border border-[#B5926A]/10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-20 -left-20 w-[320px] h-[320px] rounded-full border border-[#B5926A]/8 pointer-events-none" aria-hidden="true" />
+      {/* Dot grid bottom-right */}
+      <div className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none" aria-hidden="true"
+        style={{
+          backgroundImage: "radial-gradient(circle, #B5926A20 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+          maskImage: "radial-gradient(ellipse 80% 80% at 100% 100%, black 30%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 100% 100%, black 30%, transparent 80%)",
+        }}
+      />
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeUp>
             <div className="relative">

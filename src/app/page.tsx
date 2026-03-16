@@ -1,7 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import Brands from "@/components/Brands";
-import Stats from "@/components/Stats";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import Reels from "@/components/Reels";

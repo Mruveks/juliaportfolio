@@ -19,29 +19,48 @@ const socialLinks = [
   },
 ];
 
+// Sign up free at https://formspree.io → create a form → paste the ID here.
+// Submissions are delivered directly to your email.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 export default function Contact({ content }: { content: SiteContent }) {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
   const headingLines = content.contact_heading.split("\\n");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSending(true);
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
-    })
-      .then(() => { setSubmitted(true); setSending(false); })
-      .catch(() => { setSending(false); });
+    setError(false);
+    const data = new FormData(e.currentTarget);
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      if (res.ok) { setSubmitted(true); } else { setError(true); }
+    } catch { setError(true); }
+    finally { setSending(false); }
   }
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-[#E9E0D2]">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-10">
+    <section id="contact" className="py-24 md:py-32 bg-[#E9E0D2] relative overflow-hidden">
+      {/* Decorative circles */}
+      <div className="absolute -bottom-32 -right-32 w-[500px] h-[500px] rounded-full border border-[#B5926A]/15 pointer-events-none" aria-hidden="true" />
+      <div className="absolute -bottom-16 -right-16 w-[340px] h-[340px] rounded-full border border-[#B5926A]/10 pointer-events-none" aria-hidden="true" />
+      {/* Dot grid top-left */}
+      <div className="absolute top-0 left-0 w-56 h-56 pointer-events-none" aria-hidden="true"
+        style={{
+          backgroundImage: "radial-gradient(circle, #B5926A1A 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+          maskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, black 30%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, black 30%, transparent 80%)",
+        }}
+      />
+      <div className="max-w-[1200px] mx-auto px-6 md:px-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
             <SectionHeader
@@ -107,15 +126,9 @@ export default function Contact({ content }: { content: SiteContent }) {
                 </div>
               ) : (
                 <form
-                  name="contact"
-                  method="POST"
-                  data-netlify="true"
-                  netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   className="space-y-5 bg-[#FDFAF6] rounded-2xl p-8 border border-[#DDD6CB] shadow-sm"
                 >
-                  <input type="hidden" name="form-name" value="contact" />
-                  <input type="hidden" name="bot-field" />
 
                   <div>
                     <label htmlFor="name" className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider">Twoje imię</label>
@@ -134,6 +147,10 @@ export default function Contact({ content }: { content: SiteContent }) {
                     <textarea id="message" name="message" required rows={5} placeholder="Opowiedz mi o swojej marce i czego szukasz..."
                       className="w-full bg-[#F3EDE3] border border-[#DDD6CB] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base resize-none" />
                   </div>
+
+                  {error && (
+                    <p className="text-sm text-red-500">Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na e-mail.</p>
+                  )}
 
                   <button type="submit" disabled={sending}
                     className="w-full bg-[#B5926A] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#9A7A55] transition-all duration-200 hover:shadow-lg hover:shadow-[#B5926A]/25 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0">
