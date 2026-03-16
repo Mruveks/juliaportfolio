@@ -122,7 +122,8 @@ export default function Reels({ items }: { items: ReelItem[] }) {
         </FadeUp>
 
         {items.length > 0 ? (
-          <Carousel>
+          <div style={{ "--fade-color": "rgba(237,231,220,0.85)" } as React.CSSProperties}>
+            <Carousel>
             {items.map((reel) => (
               <div
                 key={reel.slug}
@@ -133,6 +134,7 @@ export default function Reels({ items }: { items: ReelItem[] }) {
               </div>
             ))}
           </Carousel>
+          </div>
         ) : (
           <div className="text-center py-20 text-[#1A1714]/30">
             <p>Reels pojawią się tutaj po dodaniu przez CMS.</p>

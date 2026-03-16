@@ -3,18 +3,17 @@ import { FadeUp, SectionHeader } from "@/components/ui/Animate";
 
 export default function Testimonials({ content }: { content: SiteContent }) {
   return (
-    <section className="py-24 md:py-32 bg-[#1A1714] relative overflow-hidden">
-      {/* Decorative rings */}
-      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-white/5 pointer-events-none" aria-hidden="true" />
-      <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none" aria-hidden="true" />
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full border border-[#B5926A]/10 pointer-events-none" aria-hidden="true" />
-      {/* Gold dot grid top-left */}
-      <div className="absolute top-0 left-0 w-72 h-72 pointer-events-none" aria-hidden="true"
+    <section className="py-24 md:py-32 bg-[#F3EDE3] relative overflow-hidden">
+      {/* Decorative circles */}
+      <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full border border-[#B5926A]/10 pointer-events-none" aria-hidden="true" />
+      <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full border border-[#B5926A]/8 pointer-events-none" aria-hidden="true" />
+      {/* Dot grid bottom-left */}
+      <div className="absolute bottom-0 left-0 w-64 h-64 pointer-events-none" aria-hidden="true"
         style={{
-          backgroundImage: "radial-gradient(circle, #B5926A22 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, #B5926A1A 1px, transparent 1px)",
           backgroundSize: "22px 22px",
-          maskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, black 30%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 0% 0%, black 30%, transparent 80%)",
+          maskImage: "radial-gradient(ellipse 80% 80% at 0% 100%, black 30%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 0% 100%, black 30%, transparent 80%)",
         }}
       />
 
@@ -23,7 +22,7 @@ export default function Testimonials({ content }: { content: SiteContent }) {
           eyebrow="Opinie"
           heading={
             <h2
-              className="text-4xl md:text-5xl font-bold leading-tight text-white mb-16"
+              className="text-4xl md:text-5xl font-bold leading-tight text-[#1A1714] mb-16"
               style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
             >
               Co mówią klienci.
@@ -34,7 +33,7 @@ export default function Testimonials({ content }: { content: SiteContent }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {content.testimonials.map((t, i) => (
             <FadeUp key={t.name} delay={i * 100}>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col h-full backdrop-blur-sm hover:bg-white/8 transition-colors duration-300">
+              <div className="bg-[#FDFAF6] border border-[#DDD6CB] rounded-2xl p-8 flex flex-col h-full hover:shadow-lg hover:shadow-[#B5926A]/5 transition-shadow duration-300">
                 {/* Stars */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(5)].map((_, j) => (
@@ -44,17 +43,20 @@ export default function Testimonials({ content }: { content: SiteContent }) {
                   ))}
                 </div>
 
-                <blockquote className="text-white/70 text-base leading-relaxed mb-8 flex-1">
-                  &ldquo;{t.quote}&rdquo;
+                {/* Quote mark */}
+                <div className="text-[#B5926A]/20 text-6xl font-serif leading-none mb-2 select-none" aria-hidden="true">&ldquo;</div>
+
+                <blockquote className="text-[#1A1714]/65 text-base leading-relaxed mb-8 flex-1">
+                  {t.quote}
                 </blockquote>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#B5926A]/20 flex items-center justify-center text-[#B5926A] text-sm font-bold">
+                <div className="flex items-center gap-3 pt-6 border-t border-[#DDD6CB]">
+                  <div className="w-10 h-10 rounded-full bg-[#B5926A]/15 flex items-center justify-center text-[#B5926A] text-sm font-bold">
                     {t.initials}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">{t.name}</p>
-                    <p className="text-xs text-white/40">{t.role} · {t.company}</p>
+                    <p className="text-sm font-semibold text-[#1A1714]">{t.name}</p>
+                    <p className="text-xs text-[#8A8078]">{t.role} · {t.company}</p>
                   </div>
                 </div>
               </div>

@@ -1,8 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { HeroReveal, FadeUp } from "@/components/ui/Animate";
 import { SiteContent } from "@/lib/content";
+
+// Dynamic import prevents Three.js from loading on the server.
+// To disable WebGL entirely: open WebGLBackground.tsx and set WEBGL_ENABLED = false
+const WebGLBackground = dynamic(() => import("@/components/ui/WebGLBackground"), { ssr: false });
 
 const socialLinks = [
   {
@@ -37,6 +42,7 @@ const socialLinks = [
 export default function Hero({ content }: { content: SiteContent }) {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#F3EDE3]">
+      <WebGLBackground />
       <div
         className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full opacity-[0.08] pointer-events-none"
         style={{ background: "radial-gradient(circle, #B5926A 0%, transparent 65%)", transform: "translate(25%, -20%)" }}

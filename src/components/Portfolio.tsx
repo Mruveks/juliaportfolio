@@ -130,7 +130,8 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
         </FadeUp>
 
         {items.length > 0 ? (
-          <Carousel>
+          <div style={{ "--fade-color": "rgba(243,237,227,0.85)" } as React.CSSProperties}>
+            <Carousel>
             {items.map((item) => (
               <div
                 key={item.slug}
@@ -141,6 +142,7 @@ export default function Portfolio({ items }: { items: PortfolioItem[] }) {
               </div>
             ))}
           </Carousel>
+          </div>
         ) : (
           <div className="text-center py-20 text-[#1A1714]/30">
             <p>Elementy portfolio pojawią się tutaj po dodaniu przez CMS.</p>
