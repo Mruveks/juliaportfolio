@@ -23,7 +23,7 @@ export default function Navigation() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-[#F3EDE3]/95 backdrop-blur-sm shadow-sm border-b border-[#DDD6CB]" : "bg-transparent"}`}>
       <div className="max-w-[1200px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
         <a href="#" className="text-[#1A1714] font-semibold text-lg tracking-tight hover:text-[#B5926A] transition-colors duration-200" style={{ fontFamily: '"Playfair Display", Georgia, serif' }}>
-          Julia <span className="text-[#B5926A]">Martinez</span>
+          Julia <span className="text-[#B5926A]">Gałecka</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

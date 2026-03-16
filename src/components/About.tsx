@@ -3,11 +3,6 @@ import Image from "next/image";
 const skills = [
   {
     icon: "✦",
-    title: "Strategia Treści",
-    desc: "Budowanie filarów content i kalendarzy redakcyjnych spójnych z celami marki i intencjami odbiorców.",
-  },
-  {
-    icon: "✦",
     title: "Wzrost na Instagramie",
     desc: "Organiczne i płatne strategie zwiększające zaangażowaną społeczność oraz zasięgi na Instagramie.",
   },
@@ -18,8 +13,8 @@ const skills = [
   },
   {
     icon: "✦",
-    title: "Analityka i Raporty",
-    desc: "Oparte na danych wnioski i miesięczne raporty udowadniające ROI i wyznaczające kierunek strategii.",
+    title: "Strategia Treści",
+    desc: "Budowanie filarów content i kalendarzy redakcyjnych spójnych z celami marki i intencjami odbiorców.",
   },
 ];
 
@@ -35,7 +30,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-[#E4DDD2]">
-              <Image src="/images/uploads/profile.jpg" alt="Julia Martinez — Social Media Manager" fill className="object-cover" loading="lazy" />
+              <Image
+                src="/images/uploads/profile.jpg"
+                alt="Julia - Social Media Manager"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-[#1A1714]/20">
                   <svg className="w-20 h-20 mx-auto mb-3" fill="currentColor" viewBox="0 0 24 24">
@@ -62,22 +63,22 @@ export default function About() {
               za strategią.
             </h2>
             <p className="text-[#1A1714]/60 text-lg leading-relaxed mb-6">
-              Cześć, jestem Julia — Social Media Manager z Warszawy z ponad 5-letnim
-              doświadczeniem w budowaniu silnych obecności marek w internecie.
-              Pracowałam ze startupami, e-commercem i globalnymi agencjami, tworząc
+              Cześć, jestem Julia, Social Media Manager z ponad 5-letnim doświadczeniem w budowaniu silnych
+              obecności marek w internecie. Pracowałam ze startupami, e-commercem i globalnymi agencjami, tworząc
               treści, które konwertują.
             </p>
             <p className="text-[#1A1714]/60 text-lg leading-relaxed mb-12">
-              Uważam, że świetne social media to połączenie kreatywnego storytellingu
-              i przemyślanej strategii. Każdy post, caption i kampania to szansa
-              na nawiązanie relacji i konwersję.
+              Uważam, że świetne social media to połączenie kreatywnego storytellingu i przemyślanej strategii. Każdy
+              post, caption i kampania to szansa na nawiązanie relacji i konwersję.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {skills.map((skill) => (
                 <div key={skill.title}>
                   <div className="flex items-start gap-3 mb-2">
-                    <span className="text-[#B5926A] mt-0.5 text-xs" aria-hidden="true">{skill.icon}</span>
+                    <span className="text-[#B5926A] mt-0.5 text-xs" aria-hidden="true">
+                      {skill.icon}
+                    </span>
                     <h3 className="font-semibold text-[#1A1714] text-sm">{skill.title}</h3>
                   </div>
                   <p className="text-[#1A1714]/50 text-sm leading-relaxed pl-5">{skill.desc}</p>

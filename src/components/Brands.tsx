@@ -1,4 +1,4 @@
-/* Placeholder brand logos — replace text labels with <img> tags once you have real brand assets */
+/* Placeholder brand logos - replace text labels with <img> tags once you have real brand assets */
 const brands = [
   { name: "Vogue Poland", abbr: "VP" },
   { name: "Reserved", abbr: "RE" },
@@ -22,7 +22,7 @@ export default function Brands() {
               className="flex flex-col items-center justify-center gap-2 opacity-50 hover:opacity-80 transition-opacity duration-200 group"
               title={brand.name}
             >
-              {/* Logo placeholder — swap this div for <img src="..." alt={brand.name} /> */}
+              {/* Logo placeholder - swap this div for <img src="..." alt={brand.name} /> */}
               <div className="w-14 h-14 rounded-2xl bg-[#DDD6CB] flex items-center justify-center">
                 <span className="text-[#1A1714]/50 text-xs font-bold tracking-widest">{brand.abbr}</span>
               </div>

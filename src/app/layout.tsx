@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Julia Martinez — Social Media Manager",
+        alt: "Julia - Social Media Manager",
       },
     ],
   },
@@ -112,7 +112,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* Google Fonts — Inter + Playfair Display */}
+        {/* Google Fonts - Inter + Playfair Display */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -120,7 +120,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        {/* Netlify Identity — redirect after CMS login */}
+        {/* Netlify Identity - redirect after CMS login */}
         <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" strategy="afterInteractive" />
         <Script id="netlify-identity-redirect" strategy="afterInteractive">{`
           if (window.netlifyIdentity) {
@@ -134,7 +134,7 @@ export default function RootLayout({
           }
         `}</Script>
 
-        {/* Google Analytics 4 — replace GA_MEASUREMENT_ID with your actual ID */}
+        {/* Google Analytics 4 - replace GA_MEASUREMENT_ID with your actual ID */}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];

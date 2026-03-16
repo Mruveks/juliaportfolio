@@ -13,7 +13,7 @@ export default function VisitCounter() {
         if (typeof data.count === "number") setCount(data.count);
       })
       .catch(() => {
-        // Silently fail — counter just stays hidden
+        // Silently fail - counter just stays hidden
       });
   }, []);
 

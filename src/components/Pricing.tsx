@@ -130,7 +130,7 @@ export default function Pricing() {
 
         <p className="text-center text-sm text-[#8A8078] mt-8">
           Wszystkie ceny netto. Potrzebujesz czegoś innego?{" "}
-          <a href="#contact" className="text-[#B5926A] hover:underline">Napisz do mnie</a> — chętnie przygotuję indywidualną ofertę.
+          <a href="#contact" className="text-[#B5926A] hover:underline">Napisz do mnie</a> - chętnie przygotuję indywidualną ofertę.
         </p>
       </div>
     </section>

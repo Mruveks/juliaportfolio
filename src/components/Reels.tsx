@@ -14,7 +14,7 @@ function ReelCard({ reel }: { reel: ReelItem }) {
 
   return (
     <article className="group relative flex flex-col">
-      {/* Video container — 9:16 aspect ratio */}
+      {/* Video container - 9:16 aspect ratio */}
       <div className="relative w-full aspect-[9/16] bg-[#1A1714] rounded-2xl overflow-hidden">
         {isEmbed ? (
           <iframe

@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     quote:
-      "Profesjonalizm, kreatywność i realne wyniki — to trzy słowa, które najlepiej opisują współpracę z Julią. Polecam każdej marce, która chce realnie rosnąć.",
+      "Profesjonalizm, kreatywność i realne wyniki - to trzy słowa, które najlepiej opisują współpracę z Julią. Polecam każdej marce, która chce realnie rosnąć.",
     name: "Tomasz Wiśniewski",
     role: "CEO",
     company: "E-commerce Polska",

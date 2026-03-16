@@ -114,7 +114,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT — Portrait */}
+          {/* RIGHT - Portrait */}
           <div className="relative flex items-center justify-center order-1 lg:order-2">
             <div className="absolute w-[380px] h-[380px] md:w-[480px] md:h-[480px] rounded-full border border-[#DDD6CB]" aria-hidden="true" />
             <div className="absolute w-[340px] h-[340px] md:w-[440px] md:h-[440px] rounded-full border border-[#B5926A]/15" aria-hidden="true" />
@@ -122,7 +122,7 @@ export default function Hero() {
             <div className="relative w-[300px] h-[380px] md:w-[380px] md:h-[470px] rounded-[2.5rem] overflow-hidden bg-[#E4DDD2] shadow-2xl shadow-[#B5926A]/10">
               <Image
                 src="/images/uploads/profile.jpg"
-                alt="Julia Martinez — Social Media Manager"
+                alt="Julia - Social Media Manager"
                 fill
                 className="object-cover object-top"
                 priority
@@ -137,7 +137,7 @@ export default function Hero() {
             </div>
 
             <div className="absolute -bottom-2 -left-2 md:left-0 bg-[#FDFAF6] border border-[#DDD6CB] rounded-2xl px-5 py-4 shadow-lg shadow-[#1A1714]/5">
-              <div className="text-2xl font-bold text-[#1A1714] mb-0.5">3+ lat</div>
+              <div className="text-2xl font-bold text-[#1A1714] mb-0.5">5+ lat</div>
               <div className="text-xs text-[#8A8078] tracking-wide">doświadczenia</div>
             </div>
             <div className="absolute -top-2 -right-2 md:right-0 bg-[#B5926A] rounded-2xl px-5 py-4 shadow-lg shadow-[#B5926A]/20">
