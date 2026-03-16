@@ -1,13 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { value: 2500000, display: "2.5M+", label: "Łączny zasięg", suffix: "" },
-  { value: 50, display: "50+", label: "Obsłużonych marek", suffix: "" },
-  { value: 180, display: "180%", label: "Średni wzrost zaangażowania", suffix: "%" },
-  { value: 98, display: "98%", label: "Zadowolonych klientów", suffix: "%" },
-];
+import { SiteContent } from "@/lib/content";
 
 function useCountUp(target: number, duration = 1400, active: boolean) {
   const [count, setCount] = useState(0);
@@ -31,7 +25,13 @@ function useCountUp(target: number, duration = 1400, active: boolean) {
   return count;
 }
 
-function StatCard({ stat, active }: { stat: typeof stats[0]; active: boolean }) {
+function StatCard({
+  stat,
+  active,
+}: {
+  stat: SiteContent["stats"][0];
+  active: boolean;
+}) {
   const count = useCountUp(stat.value, 1400, active);
 
   const formatted =
@@ -39,7 +39,7 @@ function StatCard({ stat, active }: { stat: typeof stats[0]; active: boolean }) 
       ? (count / 1000000).toFixed(1).replace(/\.0$/, "") + "M+"
       : stat.value >= 1000
       ? (count / 1000).toFixed(0) + "k+"
-      : count + (stat.suffix || (stat.display.endsWith("+") ? "+" : ""));
+      : count + (stat.display.endsWith("%") ? "%" : stat.display.endsWith("+") ? "+" : "");
 
   return (
     <div className="text-center p-8 rounded-2xl bg-[#FDFAF6] border border-[#DDD6CB]">
@@ -54,13 +54,15 @@ function StatCard({ stat, active }: { stat: typeof stats[0]; active: boolean }) 
   );
 }
 
-export default function Stats() {
+export default function Stats({ content }: { content: SiteContent }) {
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setActive(true); },
+      ([entry]) => {
+        if (entry.isIntersecting) setActive(true);
+      },
       { threshold: 0.3 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -81,7 +83,7 @@ export default function Stats() {
           Liczby mówią same za siebie.
         </h2>
         <div ref={ref} className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {stats.map((stat) => (
+          {content.stats.map((stat) => (
             <StatCard key={stat.label} stat={stat} active={active} />
           ))}
         </div>

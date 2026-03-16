@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { SiteContent } from "@/lib/content";
+import { SectionHeader, FadeUp } from "@/components/ui/Animate";
 
 const socialLinks = [
   {
@@ -17,9 +19,11 @@ const socialLinks = [
   },
 ];
 
-export default function Contact() {
+export default function Contact({ content }: { content: SiteContent }) {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+
+  const headingLines = content.contact_heading.split("\\n");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -40,96 +44,105 @@ export default function Contact() {
       <div className="max-w-[1200px] mx-auto px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <span className="block w-10 h-px bg-[#B5926A]" aria-hidden="true" />
-              <span className="text-sm font-medium text-[#B5926A] uppercase tracking-widest">Kontakt</span>
-            </div>
-            <h2
-              className="text-4xl md:text-5xl font-bold leading-tight text-[#1A1714] mb-8"
-              style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
-            >
-              Gotowy na wzrost
-              <br />
-              swojej marki?
-            </h2>
-            <p className="text-[#1A1714]/55 text-lg leading-relaxed mb-12">
-              Czy szukasz kompleksowej strategii social media, bieżącego
-              zarządzania czy jednorazowej kampanii - porozmawiajmy.
-            </p>
+            <SectionHeader
+              eyebrow="Kontakt"
+              heading={
+                <h2
+                  className="text-4xl md:text-5xl font-bold leading-tight text-[#1A1714] mb-8"
+                  style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
+                >
+                  {headingLines[0]}
+                  {headingLines[1] && <><br />{headingLines[1]}</>}
+                </h2>
+              }
+              body={
+                <div>
+                  <p className="text-[#1A1714]/55 text-lg leading-relaxed mb-12">
+                    {content.contact_subtext}
+                  </p>
 
-            <div className="flex items-center gap-4 mb-12">
-              <div className="w-12 h-12 rounded-full border border-[#DDD6CB] bg-[#FDFAF6] flex items-center justify-center text-[#B5926A]">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <a href="mailto:hello@gmail.co" className="text-[#1A1714] hover:text-[#B5926A] transition-colors duration-200 text-lg">
-                gmail@.com
-              </a>
-            </div>
+                  <FadeUp delay={100}>
+                    <div className="flex items-center gap-4 mb-12">
+                      <div className="w-12 h-12 rounded-full border border-[#DDD6CB] bg-[#FDFAF6] flex items-center justify-center text-[#B5926A]">
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <a href="mailto:hello@gmail.co" className="text-[#1A1714] hover:text-[#B5926A] transition-colors duration-200 text-lg">
+                        gmail@.com
+                      </a>
+                    </div>
+                  </FadeUp>
 
-            <div className="flex flex-col gap-4">
-              {socialLinks.map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
-                  <div className="w-10 h-10 rounded-full border border-[#DDD6CB] bg-[#FDFAF6] flex items-center justify-center text-[#8A8078] group-hover:text-[#B5926A] group-hover:border-[#B5926A]/40 transition-all duration-200">
-                    {s.icon}
+                  <div className="flex flex-col gap-4">
+                    {socialLinks.map((s, i) => (
+                      <FadeUp key={s.label} delay={200 + i * 80}>
+                        <a href={s.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+                          <div className="w-10 h-10 rounded-full border border-[#DDD6CB] bg-[#FDFAF6] flex items-center justify-center text-[#8A8078] group-hover:text-[#B5926A] group-hover:border-[#B5926A]/40 transition-all duration-200">
+                            {s.icon}
+                          </div>
+                          <span className="text-[#1A1714]/50 group-hover:text-[#1A1714] transition-colors duration-200 text-sm">
+                            {s.handle}<span className="text-[#1A1714]/30 ml-2">· {s.label}</span>
+                          </span>
+                        </a>
+                      </FadeUp>
+                    ))}
                   </div>
-                  <span className="text-[#1A1714]/50 group-hover:text-[#1A1714] transition-colors duration-200 text-sm">
-                    {s.handle}<span className="text-[#1A1714]/30 ml-2">· {s.label}</span>
-                  </span>
-                </a>
-              ))}
+                </div>
+              }
+            />
+          </div>
+
+          <FadeUp delay={200}>
+            <div>
+              {submitted ? (
+                <div className="bg-[#FDFAF6] border border-[#DDD6CB] rounded-2xl p-10 text-center shadow-sm">
+                  <div className="w-16 h-16 rounded-full bg-[#B5926A]/15 flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8 text-[#B5926A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-[#1A1714] text-2xl font-semibold mb-3">Wiadomość wysłana!</h3>
+                  <p className="text-[#1A1714]/50">Dziękuję za kontakt. Odezwę się w ciągu 24 godzin.</p>
+                </div>
+              ) : (
+                <form
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  onSubmit={handleSubmit}
+                  className="space-y-5 bg-[#FDFAF6] rounded-2xl p-8 border border-[#DDD6CB] shadow-sm"
+                >
+                  <input type="hidden" name="form-name" value="contact" />
+                  <input type="hidden" name="bot-field" />
+
+                  <div>
+                    <label htmlFor="name" className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider">Twoje imię</label>
+                    <input id="name" name="name" type="text" required placeholder="Jan Kowalski"
+                      className="w-full bg-[#F3EDE3] border border-[#DDD6CB] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base" />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider">Adres e-mail</label>
+                    <input id="email" name="email" type="email" required placeholder="jan@firma.pl"
+                      className="w-full bg-[#F3EDE3] border border-[#DDD6CB] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base" />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider">Wiadomość</label>
+                    <textarea id="message" name="message" required rows={5} placeholder="Opowiedz mi o swojej marce i czego szukasz..."
+                      className="w-full bg-[#F3EDE3] border border-[#DDD6CB] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base resize-none" />
+                  </div>
+
+                  <button type="submit" disabled={sending}
+                    className="w-full bg-[#B5926A] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#9A7A55] transition-all duration-200 hover:shadow-lg hover:shadow-[#B5926A]/25 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0">
+                    {sending ? "Wysyłanie..." : "Wyślij wiadomość"}
+                  </button>
+                </form>
+              )}
             </div>
-          </div>
-
-          <div>
-            {submitted ? (
-              <div className="bg-[#FDFAF6] border border-[#DDD6CB] rounded-2xl p-10 text-center shadow-sm">
-                <div className="w-16 h-16 rounded-full bg-[#B5926A]/15 flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-8 h-8 text-[#B5926A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h3 className="text-[#1A1714] text-2xl font-semibold mb-3">Wiadomość wysłana!</h3>
-                <p className="text-[#1A1714]/50">Dziękuję za kontakt. Odezwę się w ciągu 24 godzin.</p>
-              </div>
-            ) : (
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
-                className="space-y-5 bg-[#FDFAF6] rounded-2xl p-8 border border-[#DDD6CB] shadow-sm"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="bot-field" />
-
-                <div>
-                  <label htmlFor="name" className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider">Twoje imię</label>
-                  <input id="name" name="name" type="text" required placeholder="Jan Kowalski"
-                    className="w-full bg-[#F3EDE3] border border-[#DDD6CB] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base" />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider">Adres e-mail</label>
-                  <input id="email" name="email" type="email" required placeholder="jan@firma.pl"
-                    className="w-full bg-[#F3EDE3] border border-[#DDD6CB] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base" />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-[#1A1714]/50 text-xs font-medium mb-2 uppercase tracking-wider">Wiadomość</label>
-                  <textarea id="message" name="message" required rows={5} placeholder="Opowiedz mi o swojej marce i czego szukasz..."
-                    className="w-full bg-[#F3EDE3] border border-[#DDD6CB] rounded-xl px-5 py-4 text-[#1A1714] placeholder-[#1A1714]/25 focus:outline-none focus:border-[#B5926A]/60 focus:ring-1 focus:ring-[#B5926A]/30 transition-colors duration-200 text-base resize-none" />
-                </div>
-
-                <button type="submit" disabled={sending}
-                  className="w-full bg-[#B5926A] text-white px-8 py-4 rounded-full text-base font-semibold hover:bg-[#9A7A55] transition-all duration-200 hover:shadow-lg hover:shadow-[#B5926A]/25 hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0">
-                  {sending ? "Wysyłanie..." : "Wyślij wiadomość"}
-                </button>
-              </form>
-            )}
-          </div>
+          </FadeUp>
         </div>
       </div>
     </section>

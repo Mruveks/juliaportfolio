@@ -6,11 +6,13 @@ import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
 import Reels from "@/components/Reels";
 import Testimonials from "@/components/Testimonials";
+import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import { getPortfolioItems, getReelItems } from "@/lib/content";
+import { getPortfolioItems, getReelItems, getSiteContent } from "@/lib/content";
 
 export default function Home() {
+  const content = getSiteContent();
   const portfolioItems = getPortfolioItems();
   const reelItems = getReelItems();
 
@@ -18,14 +20,15 @@ export default function Home() {
     <>
       <Navigation />
       <main>
-        <Hero />
-        <Brands />
-        <Stats />
-        <About />
+        <Hero content={content} />
+        <Brands content={content} />
+        <Stats content={content} />
+        <About content={content} />
         <Portfolio items={portfolioItems} />
         <Reels items={reelItems} />
-        <Testimonials />
-        <Contact />
+        <Testimonials content={content} />
+        <Pricing content={content} />
+        <Contact content={content} />
       </main>
       <Footer />
     </>
