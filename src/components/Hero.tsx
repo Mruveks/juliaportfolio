@@ -71,7 +71,7 @@ export default function Hero() {
             >
               Julia
               <br />
-              <span className="text-[#B5926A]">Martinez</span>
+              <span className="text-[#B5926A]">Gałecka</span>
             </h1>
 
             <p className="text-lg md:text-xl text-[#1A1714]/55 mb-10 leading-relaxed max-w-md">
@@ -137,11 +137,11 @@ export default function Hero() {
             </div>
 
             <div className="absolute -bottom-2 -left-2 md:left-0 bg-[#FDFAF6] border border-[#DDD6CB] rounded-2xl px-5 py-4 shadow-lg shadow-[#1A1714]/5">
-              <div className="text-2xl font-bold text-[#1A1714] mb-0.5">5+ lat</div>
+              <div className="text-2xl font-bold text-[#1A1714] mb-0.5">3+ lat</div>
               <div className="text-xs text-[#8A8078] tracking-wide">doświadczenia</div>
             </div>
             <div className="absolute -top-2 -right-2 md:right-0 bg-[#B5926A] rounded-2xl px-5 py-4 shadow-lg shadow-[#B5926A]/20">
-              <div className="text-2xl font-bold text-white mb-0.5">50+</div>
+              <div className="text-2xl font-bold text-white mb-0.5">15+</div>
               <div className="text-xs text-white/70 tracking-wide">marek</div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 const siteUrl = "https://juliamartinez.co";
-const siteName = "Julia Martinez — Social Media Manager";
+const siteName = "Julia";
 const siteDescription =
   "Social Media Manager pomagająca markom rosnąć w mediach społecznościowych. Strategia treści, wzrost na Instagramie, TikTok i analityka oparta na danych.";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteName,
-    template: "%s | Julia Martinez",
+    template: "%s | Julia ",
   },
   description: siteDescription,
   keywords: [
